@@ -97,7 +97,7 @@ Switched to branch 'temp-branch'
 una vez que nos situemos en la rama temporal podemos empezar a trabajar en nuestro proyecto y para que git de seguimiento del mismo en cuanto se lo indiquemos, y para esto vamos a modificar nuestro archivo *README.md* que se crea por defecto con el repositorio y agregaremos una descripción de nuestro proyecto, una vez modificado el archivo escribimos en la consola `git status` y veremos que git ahora detecto cambios en el archivo.
 
 ~~~
-➜  Repositorio-prueba git:(develop) git status
+➜  Repositorio-prueba git:(temp-branch) git status
 On branch temp-branch
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -111,7 +111,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Con esto veremos que GIT nos dice que en la rama develop existen archivos con cambios, los cuales hay que agregar para que inicie el seguimiento y quede listo para poder hacer *commit* de ellos, y esto lo hacemos escribiendo en la consola `git add <nombre de archivo>`.
 
 ~~~
-➜  Repositorio-prueba git:(develop) ✗ git add README.md
+➜  Repositorio-prueba git:(temp-branch) ✗ git add README.md
 ~~~
 
 Ahora si volvemos a checar el "Status" podremos ver que git nos dice que el archivo ahora se encuentra en seguimiento y listo para hacer *commit*
