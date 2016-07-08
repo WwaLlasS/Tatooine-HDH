@@ -83,11 +83,22 @@ Switched to branch 'develop'
   master
 ~~~
 
-una vez que nos situemos en la rama develop podemos empezar a trabajar en nuestro proyecto y para que git de seguimiento del mismo en cuanto se lo indiquemos, y para esto vamos a modificar nuestro archivo *README.md* que se crea por defecto con el repositorio y agregaremos una descripción de nuestro proyecto, una vez modificado el archivo escribimos en la consola `git status` y veremos que git ahora detecto cambios en el archivo.
+Sin embargo localmente debemos trabajar en una rama temporal la cual de nombre recomendamos que sea una referencia a los cambios que se le van a realizar al proyecto, para mi caso la nombrare: *temp-branch*, asi que nuevamente haremos el poceso anterior, verificaremos que exista la nueva rama y nos situaremos en esta misma.
+
+~~~
+➜  Repositorio-prueba git:(develop) git branch
+* develop
+  master
+  temp-branch
+➜  Repositorio-prueba git:(develop) git checkout temp-branch
+Switched to branch 'temp-branch'
+~~~
+
+una vez que nos situemos en la rama temporal podemos empezar a trabajar en nuestro proyecto y para que git de seguimiento del mismo en cuanto se lo indiquemos, y para esto vamos a modificar nuestro archivo *README.md* que se crea por defecto con el repositorio y agregaremos una descripción de nuestro proyecto, una vez modificado el archivo escribimos en la consola `git status` y veremos que git ahora detecto cambios en el archivo.
 
 ~~~
 ➜  Repositorio-prueba git:(develop) git status
-On branch develop
+On branch temp-branch
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -106,8 +117,8 @@ Con esto veremos que GIT nos dice que en la rama develop existen archivos con ca
 Ahora si volvemos a checar el "Status" podremos ver que git nos dice que el archivo ahora se encuentra en seguimiento y listo para hacer *commit*
 
 ~~~
-➜  Repositorio-prueba git:(develop) ✗ git status
-On branch develop
+➜  Repositorio-prueba git:(temp-branch) ✗ git status
+On branch temp-branch
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
@@ -117,9 +128,9 @@ Changes to be committed:
 A continuacion debemos escribir en la consola `git commit -v` lo que nos abrira el editor de texto para que escribamos un mensaje sobre ese commit, guardamos el mensaje y cerramos nuestro editor y veremos algo como esto:
 
 ~~~
-➜  Repositorio-prueba git:(develop) ✗ git commit -v
+➜  Repositorio-prueba git:(temp-branch) ✗ git commit -v
 [develop 7adc3ef] commit de prueba
  1 file changed, 2 insertions(+)
 ~~~
 
-Ahora solo nos falta escribir en la consola `git push origin develop`, para sincronizar la informacion local, con el servidor remoto, al hacer esto nos pedira tu usuario y contraseña de tu cuenta de GitHub
+Ahora solo nos falta escribir en la consola `git push origin develop`, para sincronizar la informacion local, con el servidor remoto, al hacer esto te pedira tu usuario y contraseña de tu cuenta de GitHub.
