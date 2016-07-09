@@ -164,7 +164,7 @@ Por ultimo nos dira que el Pull request se a completado satisfactoriamente, y ah
 
 ![GitHub](image/github07.png)
 
-Ahora regresamos a la consola de comandos y escribimos lo siguiente `git pull origin develop` con esto vamos a sincronizar la rama Remota con la que tenemos local, para que los cambios tengan efecto tambien de manera local.
+Ahora regresamos a la consola de comandos y escribimos lo siguiente `git pull origin develop` con esto vamos a sincronizar la rama Remota con la que tenemos local, para que los cambios tengan efecto también de manera local.
 
 ~~~
 ➜  Repositorio-prueba git:(temp-branch) git pull origin develop
