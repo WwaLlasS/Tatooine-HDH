@@ -19,7 +19,7 @@ Lo primero que debemos hacer es crear un nuevo directorio, este directorio sera 
 
 En la imagen de la parte superior utilizamos el comando `mkdir`(Make directory) para crear un directorio llamado *respositorio-ejemplo*, despues usamos el comando `ls`(List), para verificar que el directorio haya sido creado y seguido del comando `cd`(change directory) para situarnos en el mismo.
 
-- Luego de situarnos en el directorio raiz de nuestro repositorio lanzamos el comando `git init` lo que inicializara un nuevo repositorio vacio de git.
+- Luego de situarnos en el directorio raíz de nuestro repositorio lanzamos el comando `git init` lo que inicializara un nuevo repositorio vacio de git.
 
 ![Ejemplo 2](image/console02.png "Creando repositorio 2")
 
@@ -31,15 +31,15 @@ Para crear un repositorio remoto necesitamos tener un cuenta en alguna plataform
 
 ![GitHub](image/github01.png "Paso 1")
 
-- Despues de dar click en "New repository" nos mandará a la parte para poner los datos del repositorio, como primer dato podras elegir el Propietario y el nombre del repositorio, seguido de eso podras escribir una breve descripcion acerca del repositorio, despues podremos seleccionar si queremos que sera publico o privado y por ultimo nos da la opcion de iniciar con un archivo *README* y que tipo de licencia deseamos utilizar para nuestro proyecto.
+- Despues de dar click en "New repository" nos mandará a la parte para poner los datos del repositorio, como primer dato podras elegir el Propietario y el nombre del repositorio, seguido de eso podras escribir una breve descripción acerca del repositorio, despues podremos seleccionar si queremos que sera publico o privado y por ultimo nos da la opcion de iniciar con un archivo *README* y que tipo de licencia deseamos utilizar para nuestro proyecto.
 
 ![GitHub](image/github02.png "Paso 2")
 
-- Despues de dar click en el boton "Create repository" nos redirecciona a la raíz de nuestro repositorio, entonces tenemos que ubicar un boton que dice "Clone or download", al dar click se desplegará una pequeña ventana emegente donde nos da una URL para clonarlo o la opción de descargarlo en un archivo comprimido, copiamos la URL y pasamos al siguiente paso.
+- Despues de dar click en el botón "Create repository" nos redirecciona a la raíz de nuestro repositorio, entonces tenemos que ubicar un botón que dice "Clone or download", al dar click se desplegará una pequeña ventana emegente donde nos da una URL para clonarlo o la opción de descargarlo en un archivo comprimido, copiamos la URL y pasamos al siguiente paso.
 
 ![GitHub](image/github03.png "Paso 3")
 
-- Despues de haber copiado la URL donde se encuentra alojado nuestro repositorio remoto, iremos a la consola de comandos y ejecutaremos el comando `git clone` seguido de la URL del repositorio, esto es para que git descargue el repositorio en el directorio en el cual estamos situados en ese momento, ya solo queda acceder al directorio del repositorio con el comando `cd` y listo ya tenemos nuestro repositorio local y remoto.
+- Despues de haber copiado la URL donde se encuentra alojado nuestro repositorio remoto, iremos a la consola de comandos y escribiremos `git clone` seguido de la URL del repositorio, esto es para que git descargue el repositorio en el directorio en el cual estamos situados en ese momento, ya solo queda acceder al directorio del repositorio con el comando `cd` y listo ya tenemos nuestro repositorio local y remoto.
 
 ![CLI](image/console03.png)
 
@@ -52,14 +52,14 @@ Una vez que tenemos nuestro repositorio clonado, revisamos el directorio con `ls
 LICENSE   README.md
 ~~~
 
-Una vez verificado que esten los archivos que se crean por defecto, procedemos a revisar las Ramas(branches) escribiendo lo siguiente en la consola `git branch`.
+Una vez verificado que esten los archivos que se crean por defecto, procedemos a revisar las Ramas(**branches**) escribiendo lo siguiente en la consola `git branch`.
 
 ~~~
 ➜  Repositorio-prueba git:(master) git branch
 * master
 ~~~
 
-Al ejecutar `git branch` nos mostrara una lista de las ramas existentes, en GIT por defecto tiene la rama master, en ella es donde enviaremos nuestro proyecto ya cuando se encuentre en una version estable, pero recuerda que solo debemos publicar verisiones estables en esta rama, asi que para poder trabajar crearemos una rama nueva escribiendo `git branch <nombre>` donde el nombre es el que tu quieres ponerle.
+Al ejecutar `git branch` nos mostrara una lista de las ramas existentes, en GIT por defecto tiene la rama *master*, en ella es donde enviaremos nuestro proyecto ya cuando se encuentre en una version estable, pero recuerda que solo debemos publicar verisiones estables en esta rama, asi que para poder trabajar crearemos una rama nueva escribiendo `git branch <nombre>` donde el nombre es el que tu quieres ponerle.
 
 ~~~
 ➜  Repositorio-prueba git:(master) git branch develop
@@ -125,7 +125,7 @@ Changes to be committed:
 	modified:   README.md
 ~~~
 
-A continuacion debemos escribir en la consola `git commit -v` lo que nos abrira el editor de texto para que escribamos un mensaje sobre ese commit, guardamos el mensaje y cerramos nuestro editor y veremos algo como esto:
+A continuacion debemos escribir en la consola `git commit -v` lo que nos abrirá el editor de texto para que escribamos un mensaje sobre ese commit, guardamos el mensaje y cerramos nuestro editor y veremos algo como esto:
 
 ~~~
 ➜  Repositorio-prueba git:(temp-branch) ✗ git commit -v
@@ -133,4 +133,49 @@ A continuacion debemos escribir en la consola `git commit -v` lo que nos abrira 
  1 file changed, 2 insertions(+)
 ~~~
 
-Ahora solo nos falta escribir en la consola `git push origin develop`, para sincronizar la informacion local, con el servidor remoto, al hacer esto te pedira tu usuario y contraseña de tu cuenta de GitHub.
+Ahora solo nos falta escribir en la consola `git push origin temp-branch`, para sincronizar la informacion local, con el servidor remoto, al hacer esto te pedira tu usuario y contraseña de tu cuenta de GitHub.
+
+~~~
+➜  Repositorio-prueba git:(temp-branch) git push origin temp-branch
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 482 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/WwaLlasS/Repositorio-prueba.git
+ * [new branch]      temp-branch -> temp-branch
+~~~
+
+#### De regreso a GitHub
+
+Listo, ahora ya tienes todo sincronizado en tu servidor remoto, solo falta enviar los cambios a la rama *develop* y borrar la rama temporal, y para ello nos vamos al sitio web de [GitHub](https://github.com/ "ir a github.com") y nos ubicamos en el repositorio que creamos, ya estando ahi tenemos que ubicar el boton *Compare & pull request* y damos click.
+
+![GitHub](image/github04.png)
+
+Al dar click en *Compare & pull request* nos redirecciona al Pull request, donde debemos selecionar la rama de *base* y la rama con la que queremos comprar, recuerda que la base debe ser *develop* y no master. En la parte de abajo podemos ver los cambios realizados y los commits hechos, verificamos que todo este bien y hacemos click en *Create pull request*.
+
+![GitHub](image/github05.png)
+
+Si todo sale bien nos dira que no existen conflictos y que esta listo para hacer *Merge pull request*, asi que damos click en ese boton y confirmamos.
+
+![GitHub](image/github06.png)
+
+Por ultimo nos dira que el Pull request se a completado satisfactoriamente, y ahora solo damos click en *Delete branch* para que borre la rama temporal en la que trabajamos y listo ya tienes tu repositorio remoto sincronizado.
+
+![GitHub](image/github07.png)
+
+Ahora regresamos a la consola de comandos y escribimos lo siguiente `git pull origin develop` con esto vamos a sincronizar la rama Remota con la que tenemos local, para que los cambios tengan efecto también de manera local.
+
+~~~
+➜  Repositorio-prueba git:(temp-branch) git pull origin develop
+remote: Counting objects: 1, done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), done.
+From https://github.com/WwaLlasS/Repositorio-prueba
+ * branch            develop    -> FETCH_HEAD
+   b37ee0f..9c01877  develop    -> origin/develop
+Updating 3637b6f..9c01877
+Fast-forward
+~~~
+
+Felicidades, ahora ya estas listo para empezar a usar GIT como tu sistema de control de versiones.
