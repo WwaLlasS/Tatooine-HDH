@@ -41,7 +41,7 @@ Pie de pagina:
 > Por ultimo podemos encontrar el pie de pagina (footer) del sitio web el cual cuenta con informacion sobre avisos legales, politicas de privacidad, redes sociales, los terminos y condiciones y nuevamente el logo de la pagina. Esa informacion la ubicamos ahi, ya que no es informacion relevante para el usuario.
 
 
-![Pagina de inicio](images/index.png)
+![Pagina de inicio](images/Index.png)
 
 #### Detalles Producto
 
@@ -58,4 +58,4 @@ Comentarios y valoraciones:
 >Esta seccion esta enfocada a dar una valoraciones al producto y ofrecer al cliente la oportunidad de darnos su opinion para que nostros podamos tomar esas opiniones como una retroalimentacion y asi poder mejorar el servicio. Por ser informacion de menor relevancia se tomo la decision de posicionarla en la parte inferior del sitio web.
 
 
-![Pagina de producto](images/producto.png)
+![Pagina de producto](images/Producto.png)
